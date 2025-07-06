@@ -1,0 +1,163 @@
+====================
+FEATURES OVERVIEW
+====================
+
+The features we will work on are a login system and a leaderboard system:
+
+1. LOGIN SYSTEM
+
+The login system allows users to securely access the app by providing their username and password. It consists of the following components:
+- A login/sign-up page (`login.py`) built using Streamlit, with input fields for credentials.
+- Backend logic in `modules.py` that checks the provided credentials via the `login()` function.
+- Credential storage and retrieval handled in `data_fetcher.py` using `get_user_password()` and `set_user_credentials()` functions.
+- User sessions are tracked using `st.session_state['user']`.
+
+This feature ensures that users are authenticated before accessing the application.
+
+2. LEADERBOARD SYSTEM
+
+The leaderboard allows users to see their rank and compare themselves with others based on specific metrics like:
+- Total Steps
+- Total Distance
+- Calories Burned
+
+We will start with Calories and then branch to the other metrics.
+
+The leaderboard includes:
+- A Streamlit-rendered display via the `render_leaderboard()` function in `modules.py`.
+- Dynamic filtering option.
+- Visual highlighting of the currently logged-in user for easy identification.
+- A data gathering option using `get_user_score()` from `data_fetcher.py` to retrieve sorted rankings.
+
+The leaderboard is integrated into the `community.py` page, providing an interactive and competitive view of user activity within the app.
+
+====================
+Sprint Overview
+====================
+
+*Important!: This information is also found in Deliverable Sprint Planning #118 issue in Unit 5 Deliverable Milestone.
+
+Sprint Planning - Unit 5 Deliverable
+
+Goal:
+Implement the core features for Unit 5, including login, leaderboard, and user stats integration.
+---------------------------
+Tasks:
+---------------------------
+
+Login
+-----------
+#92 
+#101 
+#102 
+#103 
+#105 
+#106 
+115 
+116 
+#117 
+
+Leaderboard
+-----------
+107 
+108 
+110 
+111 
+112 
+113 
+114 
+---------------------------
+Sprints:
+---------------------------
+
+Sprint 1:
+-----------
+Start: April 14  
+End: April 18
+
+Sprint 2:
+-----------
+Start: April 19
+End: April 21
+
+====================
+DEVELOPMENT PLAN
+====================
+
+Sizes anad their durations:
+
+XS & S = 1 day
+
+M = 2 days
+
+Week of April 14–April 18, 2025
+-------------------------------
+
+The focus for this week is building out both the **Login** and **Leaderboard** features from backend to frontend. This includes database updates, data retrieval functions, UI rendering, and unit testing.
+
+MONDAY, APRIL 14
+- Generate more fake users + populate passwords  
+  - Issue: #92 | Assignee: Diego | Size: M  
+- Create `get_user_score(user, field_name)` function  
+  - Issue: #107 | Assignee: Diego| Size: S  
+- Add password column to users table in BigQuery  
+  - Issue: #117 | Assignee: Diego | Size: XS  
+
+TUESDAY, APRIL 15
+- Create `get_user_password(username)` function  
+  - Issue: #101 | Assignee: John | Size: S  
+- Write unit tests for `get_user_score()`  
+  - Issue: #108 | Assignee: Mayokun | Size: M  
+- Create `render_leaderboard(field_name)` in `modules.py`  
+  - Issue: #110 | Assignee: Evan | Size: M  
+
+WEDNESDAY, APRIL 16
+- Create `set_user_password(userID, password)` function  
+  - Issue: #102 | Assignee: John | Size: S  
+- Create `login(username, password)` in `modules.py`  
+  - Issue: #103 | Assignee: Diego | Size: S  
+
+THURSDAY, APRIL 17
+- Create `login.py` Streamlit Page for Login/Sign-Up UI  
+  - Issue: #105 | Assignee: Mayokun | Size: M  
+- Integrate `login.py` into `app.py`  
+  - Issue: #106 | Assignee: Diego | Size: XS  
+
+FRIDAY, APRIL 18
+- Write unit tests for `render_leaderboard()`  
+  - Issue: #113 | Assignee: Evan | Size: S  
+- Add filters to leaderboard  
+  - Issue: #114 | Assignee: Diego | Size: M  
+- Write unit tests for `get_user_password()`  
+  - Issue: #115 | Assignee: John | Size: S  
+
+By the end of this week, both login and leaderboard features will have functional backends, basic UIs, and partial test coverage. Final polishing and UI enhancements (e.g., filtering, user highlighting) will continue into the next sprint.
+
+
+Week of April 19–April 21, 2025
+-------------------------------
+
+The goal for this period is to polish and finalize both the **Login** and **Leaderboard** features by completing all unit testing and final UI integrations. These are the last steps before the feature set is considered fully functional and ready.
+
+SATURDAY, APRIL 19
+- Write unit tests for `set_user_password()`  
+  - Issue: #116  
+  - Assignee: John  
+  - Size: S  
+
+SUNDAY–MONDAY, APRIL 20–21
+- Highlight current user in leaderboard  
+  - Issue: #111  
+  - Assignee: Evan  
+  - Size: S  
+  
+- Add leaderboard to `community.py`  
+  - Issue: #112  
+  - Assignee: Mayokun  
+  - Size: XS  
+
+By the end of April 21, all login and leaderboard components — including data logic, UI rendering, and testing — should be fully integrated, reviewed, and ready for final evaluation.
+
+
+
+

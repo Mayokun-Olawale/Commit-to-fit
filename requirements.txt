@@ -1,0 +1,10 @@
+streamlit==1.43.0 # Directly specify streamlit version to be able to use AppTest
+pytest
+pandas
+google-cloud-bigquery==3.26.0
+datetime
+google-cloud-aiplatform==1.69.0
+python-dotenv==1.0.1
+Pillow==11.1.0
+streamlit-option-menu
+bcrypt
